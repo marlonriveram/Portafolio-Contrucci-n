@@ -12,7 +12,7 @@ const router = express.Router()
 
 router.get("/", getAll)
 router.get("/:id", getById)
-router.post("/", ValidatorSchemaUser,create)
+router.post("/",ValidatorSchemaUser,create)
 router.put("/:id", update)
 router.delete("/:id", deleteById)
 

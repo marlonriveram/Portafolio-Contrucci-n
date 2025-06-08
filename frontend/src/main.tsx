@@ -1,15 +1,27 @@
-import { StrictMode } from 'react'
+// import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { ChakraProvider } from '@chakra-ui/react'
-// import './index.css'
-import App from './App.tsx'
+import {
+  ChakraProvider,
+  createSystem,
+  defaultConfig,
+  defineConfig,
+} from "@chakra-ui/react"
+import { RouterProvider } from 'react-router'
+import { router } from './routes/router.tsx'
+
+const config = defineConfig({
+  theme: {
+    tokens: {
+      colors: {},
+    },
+  },
+})
+
+const system = createSystem(defaultConfig, config)
 
 createRoot(document.getElementById('root')!).render(
 
-  <ChakraProvider>
-    <StrictMode>
-      <App />
-    </StrictMode>
-
+  <ChakraProvider value={system}>
+    <RouterProvider router={router}/>
   </ChakraProvider>
 )

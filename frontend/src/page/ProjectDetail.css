@@ -1,0 +1,21 @@
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  background-color: khaki;
+  border: 1px solid red;
+  flex: 0 0 100%;
+  min-width: 0;
+  margin-right: 10px; /* Default slide gap */
+}
+
+@media (min-width: 768px) {
+  .embla__slide {
+    flex: 0 0 50%; /* Breakpoint SM slide covers 50% of the viewport */
+    margin-right: 20px; /* Breakpoint SM gap */
+  }
+  
+}
