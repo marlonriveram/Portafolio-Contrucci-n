@@ -6,13 +6,13 @@ import {
     getById,
     update
 } from "../controllers/controller.projects"
-import { ValidatorSchemaUser } from "../middleware/zod"
+import { ValidatorSchemaProject } from "../middleware/zod"
 
 const router = express.Router()
 
 router.get("/", getAll)
 router.get("/:id", getById)
-router.post("/",ValidatorSchemaUser,create)
+router.post("/",ValidatorSchemaProject,create)
 router.put("/:id", update)
 router.delete("/:id", deleteById)
 

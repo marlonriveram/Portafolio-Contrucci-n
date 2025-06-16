@@ -42,7 +42,7 @@ const projectSchema = z.object({
 //optener type del schema
 type TypeBody = z.infer<typeof projectSchema>
 
-export const ValidatorSchemaUser = (
+export const ValidatorSchemaProject = (
     req: Request,
     res: Response,
     next: NextFunction) => {

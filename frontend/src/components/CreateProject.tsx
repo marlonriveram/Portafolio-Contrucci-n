@@ -17,6 +17,7 @@ export const CreateProject = () => {
         register,
         getValues,
         handleSubmit,
+        reset,
         formState: { errors }
     } = useForm<FormValues>({
         resolver: zodResolver(projectSchema)
@@ -26,6 +27,7 @@ export const CreateProject = () => {
         const data = await submit(getValues())
 
         console.log(data)
+        reset()
 
     }
 
