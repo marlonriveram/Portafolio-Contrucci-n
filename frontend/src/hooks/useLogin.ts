@@ -1,15 +1,11 @@
-import { useState } from "react"
 import { authUser } from "../services/authApi"
 import { User } from "../schemas/userSchema"
+import { useMutation } from "@tanstack/react-query"
 
-export const useLogin = async (data: User) => {
+export const useLogin = () => {
+    
+    return useMutation({
+        mutationFn: (data: User) => authUser(data),
+    });
 
-    try {
-        const res = await authUser(data)
-        console.log(res)
-
-    } catch (error) {
-
-    }
-   
 }

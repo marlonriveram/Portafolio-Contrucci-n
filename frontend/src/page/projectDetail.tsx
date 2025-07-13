@@ -1,6 +1,6 @@
 import './ProjectDetail.css'
 import { Box, Button, Container, Flex, Heading, Icon, Text } from '@chakra-ui/react'
-import { Carousel } from '../components/carousel/carousel'
+import { Carousel } from '../components/carousel/Carousel'
 import { GoArrowLeft } from "react-icons/go";
 import { useNavigate } from 'react-router';
 

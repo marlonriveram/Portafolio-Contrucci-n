@@ -14,6 +14,7 @@
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@hookform/resolvers": "^5.0.1",
+    "@tanstack/react-query": "^5.81.5",
     "axios": "^1.9.0",
     "embla-carousel-react": "^8.6.0",
     "framer-motion": "^12.12.1",

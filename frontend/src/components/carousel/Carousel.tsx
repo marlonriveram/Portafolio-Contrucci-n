@@ -1,6 +1,6 @@
 import { Box, Button, Flex, Group } from '@chakra-ui/react'
 import { useCarousel } from '../../hooks/useCarousel'
-import './carousel.css'
+import './carouselStyle.css'
 
 export const Carousel = () => {
     const { emblaRef, scrollPrev, scrollNext } = useCarousel()

@@ -7,7 +7,6 @@ export const useCards = () => {
     const [dataCard, setDataCard] = useState<Projects[]>([])
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState<Error | null>(null)
-
     useEffect(() => {
         const fetchData = async () => {
             setLoading(true)
