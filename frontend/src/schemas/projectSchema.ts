@@ -3,7 +3,8 @@ import { z } from "zod"
 
 export enum ProjectCategory {
     Residencial = "residencial",
-    Comercial = "comercial"
+    Comercial = "comercial",
+    Reforma = "reforma"
 }
 
 export const projectSchema = z.object({

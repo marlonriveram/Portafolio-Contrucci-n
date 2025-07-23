@@ -5,21 +5,24 @@ import { Loading } from "../loading/spiner"
 
 export const CardGrid = () => {
     const { dataCard, loading, error } = useCards()
+    console.log(dataCard)
 
     if (loading) return <Loading />
     if (error) return <Text>Se produjo un error </Text>
+    
 
-    return dataCard.length > 0
+    return dataCard && dataCard.length > 0 
         ? (
             <Container>
                 <Flex p={3} gap={4} wrap="wrap" justify="center">
-                    {dataCard.map(data => (
+                    {dataCard?.map(data => (
                         <ProjectCard
                             key={data._id}
                             title={data.title}
+                            category={data.category}
                             shortDescription={data.shortDescription}
                             mainImage={data.mainImage}
-                            id = {data._id as string}
+                            id={data._id as string}
                         />
                     ))}
                 </Flex>

@@ -3,7 +3,8 @@ import { model, Schema, ValidatorProps } from "mongoose"
 
 export enum ProjectCategory {
   Residencial = "residencial",
-  Comercial = "comercial"
+  Comercial = "comercial",
+  Reforma = "reforma"
 }
 
 //Convierte el enum en un array iterable
@@ -54,4 +55,4 @@ const projectSchema = new Schema({
   date: { type: Date, required: true },
 }, { timestamps: true })
 
-export default model('projects', projectSchema, 'Projects')
+export const ProjectModel = model("projects", projectSchema, "Projects")

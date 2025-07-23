@@ -1,7 +1,6 @@
 import { Box, Button, Flex, Heading, Image, Text } from "@chakra-ui/react"
 import { useNavigate } from "react-router"
 
-
 export const Home = () => {
 
   const router = useNavigate()
@@ -26,6 +25,6 @@ export const Home = () => {
         <Image rounded={"md"} src="https://images.unsplash.com/flagged/photo-1572491259205-506c425b45c3" alt="Imagen de construcción" />
       </Box>
     </Flex>
-
+   
   )
 }

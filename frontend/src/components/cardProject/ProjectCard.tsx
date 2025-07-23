@@ -1,15 +1,17 @@
 import { Card, Image, Text } from "@chakra-ui/react"
-import { useNavigate } from "react-router"
+import { data, useNavigate } from "react-router"
 
 interface CardInfo {
   id: string
-  title: string
+  title: string,
+  category:string,
   shortDescription: string
   mainImage: string
 }
 
 export const ProjectCard = ({
   title,
+  category,
   shortDescription,
   mainImage,
   id
@@ -29,7 +31,7 @@ export const ProjectCard = ({
       <Text
         padding={5}
         color={"blackAlpha.600"}
-      >Residencial</Text>
+      >{category}</Text>
       <Card.Body gap="2">
         <Card.Title>{title}</Card.Title>
         <Card.Description>
