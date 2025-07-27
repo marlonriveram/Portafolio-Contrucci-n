@@ -11,7 +11,6 @@ export const Protected = ({ children }: { children: ReactNode }) => {
     if (loading) {
         return <Spinner />
     }
-    console.log(user)
     if (!user) {
         return <Navigate to="/login" />
     }

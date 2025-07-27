@@ -7,7 +7,7 @@ export const useSesion = () => {
         queryFn: sesion,
     })
     return {
-        user: data,
+        user: isError || !data ? null : data,
         loading: isLoading,
         error: isError
     }

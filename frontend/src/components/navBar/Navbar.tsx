@@ -1,16 +1,20 @@
-import { Box, Button, Container, Group, useBreakpointValue } from "@chakra-ui/react"
+import { Box, Button, Container, Group, Spinner, useBreakpointValue } from "@chakra-ui/react"
 import { useNavigate } from "react-router"
-import { useSesion } from "../../hooks/useSesion"
+// import { useSesion } from "../../hooks/useSesion"
 import { HamburgerMenu } from "../hamburguerMenu/HamburgerMenu"
 import { useLogout } from "../../hooks/useLogout"
-import Swal from "sweetalert2"
+import { UserSesion } from "../../schemas/sesionSchema"
+
+interface NavBarProps {
+  user: UserSesion | null;
+}
 
 
-export const NavBar = () => {
+export const NavBar = ({user}: NavBarProps) => {
     const router = useNavigate()
-    const { user } = useSesion()
+    // const { user } = useSesion()
     const ismobile = useBreakpointValue({ base: true, md: false })
-    const { mutateAsync,isPending } = useLogout()
+    const { mutateAsync } = useLogout()
 
     const logout = async () => {
         try {
@@ -23,6 +27,7 @@ export const NavBar = () => {
 
     return (
         <Container display={"flex"} justifyContent="space-between" mt={4} >
+          
             <Box onClick={() => router("/")} cursor="pointer"> <p>Henry contrucciones</p></Box>
             {
                 !!user

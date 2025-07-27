@@ -55,7 +55,7 @@ export const logout = async ( req: Request, res : Response) =>{
 export const profile = (req: any, res: Response) => {
     try {
         const user = req.user
-        if (!user) return res.status(404).json({ ok: false, message: "Usuario no esta logueado" })
+        // if (!user) return res.status(404).json({ ok: false, message: "Usuario no esta logueado" })
 
         res.status(200).json({ ok: true, user })
     } catch (error) {

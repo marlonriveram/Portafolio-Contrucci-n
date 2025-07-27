@@ -44,7 +44,6 @@ export const Login = () => {
         try {
             const res = await mutateAsync(data);
             // Aquí puedes mostrar un mensaje de éxito si lo deseas
-            console.log(res);
 
             router("/panel-admin")
 
