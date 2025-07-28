@@ -9,6 +9,7 @@ import {
 import { RouterProvider } from 'react-router'
 import { router } from './routes/router.tsx'
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+import Modal from 'react-modal'
 
 const config = defineConfig({
   theme: {
@@ -21,7 +22,7 @@ const config = defineConfig({
 const queriClient = new QueryClient()
 
 const system = createSystem(defaultConfig, config)
-
+Modal.setAppElement('#root') 
 createRoot(document.getElementById('root')!).render(
   <QueryClientProvider client={queriClient}>
     <ChakraProvider value={system}>

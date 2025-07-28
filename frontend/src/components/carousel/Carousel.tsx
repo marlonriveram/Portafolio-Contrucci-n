@@ -2,7 +2,10 @@ import { Box, Button, Flex, Group } from '@chakra-ui/react'
 import { useCarousel } from '../../hooks/useCarousel'
 import './carouselStyle.css'
 
-export const Carousel = () => {
+interface Images {
+    images:string[] | undefined
+}
+export const Carousel = ({images}:Images) => {
     const { emblaRef, scrollPrev, scrollNext } = useCarousel()
     return (
         <Box
@@ -14,14 +17,11 @@ export const Carousel = () => {
             <Box className='embla__viewport' paddingBottom={2.5} ref={emblaRef} >
 
                 <Box className='embla__container'>
-                    <img className='embla__slide' src="https://media.gq.com.mx/photos/66b3e2ab1eb4176c241add84/16:9/w_1920,c_limit/Mejores_series_de_anime.jpg" alt="" />
-
-                    <img className='embla__slide' src="https://media.gq.com.mx/photos/66b3e2ab1eb4176c241add84/16:9/w_1920,c_limit/Mejores_series_de_anime.jpg" alt="" />
-
-                    <img className='embla__slide' src="https://media.gq.com.mx/photos/66b3e2ab1eb4176c241add84/16:9/w_1920,c_limit/Mejores_series_de_anime.jpg" alt="" />
-
-                    <img className='embla__slide' src="https://media.gq.com.mx/photos/66b3e2ab1eb4176c241add84/16:9/w_1920,c_limit/Mejores_series_de_anime.jpg" alt="" />
-
+                    {
+                        images?.map(img => (
+                            <img key={img} className='embla__slide' style={{objectFit:"cover"}} src={ `${img}` }alt="" />
+                        ))
+                    }
                 </Box>
             </Box>
 

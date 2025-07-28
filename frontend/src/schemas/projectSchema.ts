@@ -30,6 +30,25 @@ export const projectSchema = z.object({
     }),
 })
 
+
+export const projectByIdSchema = z.object({
+  _id: z.string(),
+  title: z.string(),
+  shortDescription: z.string(),
+  longDescription: z.string(),
+  mainImage: z.string().url(),
+  images: z.array(z.string()),
+  category: z.string(),
+  costumer: z.string(),
+  date: z.string(), // Puedes usar z.coerce.date() si quieres convertirlo automáticamente a Date
+  createdAt: z.string(),
+  updatedAt: z.string(),
+  __v: z.number(),
+});
+
+// Tipo inferido si lo necesitas para TypeScript:
+export type ProjectById = z.infer<typeof projectByIdSchema>;
+
 export type FormValues = z.infer<typeof projectSchema>
 
 export type FormInputs = {
