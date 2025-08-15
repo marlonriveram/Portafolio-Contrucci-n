@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Group } from '@chakra-ui/react'
+import { Box, Button, Flex, } from '@chakra-ui/react'
 import { useCarousel } from '../../hooks/useCarousel'
 import './carouselStyle.css'
 
@@ -10,8 +10,8 @@ export const Carousel = ({images}:Images) => {
     return (
         <Box
             className='embla'
-            width={"3/5"}
-            minW="340px"
+            // width={"3/5"}
+            // minW="340px"
             flex={2}
         >
             <Box className='embla__viewport' paddingBottom={2.5} ref={emblaRef} >

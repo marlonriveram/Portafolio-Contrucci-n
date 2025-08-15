@@ -8,8 +8,8 @@ export const Footer = () => {
                 <Text mb={4}>Ofrecemos servicios completos de construcción, desde la planificación incial hasta la entrega final del proyecto</Text>
             </Box>
 
-            <SimpleGrid minChildWidth={"sm"} autoColumns="auto" gap={3}>
-                <GridItem p={4}>
+            <SimpleGrid  gap={3} templateColumns="repeat(auto-fit, minmax(200px, 1fr))" >
+                <GridItem p={4} >
                     <Heading>Construcción Residencial</Heading>
                     <Text>
                         Casas, apartamentos y complejos residenciales construidos con los más altos estándares de calidad.

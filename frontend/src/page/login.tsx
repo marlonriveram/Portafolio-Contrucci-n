@@ -16,18 +16,9 @@ import { useLogin } from "../hooks/useLogin"
 import { useNavigate } from "react-router";
 import Swal from 'sweetalert2'
 
-// Swal.fire({
-//   title: '¿Estás seguro?',
-//   text: '¡No podrás revertir esto!',
-//   icon: 'warning',
-//   showCancelButton: true,
-//   confirmButtonText: 'Sí, eliminar',
-// })
-
-
 
 export const Login = () => {
-
+     Swal.close()
     const {
         register,
         getValues,
@@ -35,7 +26,11 @@ export const Login = () => {
         handleSubmit,
         // reset
     } = useForm<User>({
-        resolver: zodResolver(userSchema)
+        resolver: zodResolver(userSchema),
+        defaultValues:{
+            email:"henry912@hotmail.com",
+            password:"henryr912"
+        }
     })
     const router = useNavigate()
     const { mutateAsync } = useLogin();
@@ -93,19 +88,6 @@ export const Login = () => {
                         </Fieldset.Content>
 
                         <Button type="submit" > Login </Button>
-                        {/* <Button
-                            onClick={async () => {
-                                try {
-                                    const res = await axios.get("http://localhost:3000/api/auth/me", { withCredentials: true })
-                                    console.log(res.data)
-                                } catch (error) {
-
-                                    if (axios.isAxiosError(error)) {
-                                        console.log(error.response?.data)
-                                    }
-                                }
-                            }}
-                        > Prueba </Button> */}
                     </Fieldset.Root>
 
                 </form>

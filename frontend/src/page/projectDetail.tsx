@@ -1,7 +1,7 @@
 import './ProjectDetail.css'
 import { Box, Button, Container, Flex, Heading, Icon, Text } from '@chakra-ui/react'
+import { IoMdArrowRoundBack } from "react-icons/io";
 import { Carousel } from '../components/carousel/Carousel'
-import { GoArrowLeft } from "react-icons/go";
 import { useNavigate, useParams } from 'react-router';
 import { useGetProjectById } from '../hooks/useProjectById';
 
@@ -11,26 +11,21 @@ export const ProjectDetail = () => {
 
   const navigate = useNavigate()
   const { id } = useParams<string>()
-  const { data: project, isLoading } = useGetProjectById(id as string)
+  const { data: project} = useGetProjectById(id as string)
 
-  // let fecha
-  // if(project?.date){
-  //   const fecha = new Date(project.date)
-  //    console.log(fecha.toLocaleDateString());
-  // }
 
   return (
     <Container paddingTop={2.5}>
 
       <Button
-        onClick={() => navigate("/projects")}
-        colorPalette={"green"} variant="subtle"
+        onClick={() => navigate(-1)}
+         variant="subtle"
         marginBottom={8}
       >
         <Icon>
-          <GoArrowLeft />
+          <IoMdArrowRoundBack/>
         </Icon>
-        Volver a Proyectos
+        Volver
 
       </Button>
       <Flex gap={10} wrap={'wrap'} marginBottom={12}>
@@ -42,7 +37,7 @@ export const ProjectDetail = () => {
           borderWidth={"1px"}
           padding={4}
           width={"1/4"}
-          minW="340px"
+          minW="300px"
           height="fit-content"
           flex="1"
         >
