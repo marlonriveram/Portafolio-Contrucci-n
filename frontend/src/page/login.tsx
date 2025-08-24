@@ -29,7 +29,7 @@ export const Login = () => {
         resolver: zodResolver(userSchema),
         defaultValues:{
             email:"henry912@hotmail.com",
-            password:"henryr912"
+            // password:"henryr912"
         }
     })
     const router = useNavigate()
