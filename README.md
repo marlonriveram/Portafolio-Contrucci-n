@@ -114,7 +114,9 @@ El proyecto está dividido en dos partes principales:
    npm run dev
    ```
 
-
+### Credenciales de prueba
+- Usuario: admin@test.com
+- Contraseña: admin123
 
 ## Autor
 
